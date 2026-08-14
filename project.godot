@@ -10,12 +10,18 @@ config_version=5
 
 [application]
 
-config/name="project"
+config/name="Donut Shop"
+run/main_scene="res://scenes/boot/boot.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=720
+window/size/viewport_height=720
+window/size/window_width_override=720
+window/size/window_height_override=1280
+window/size/resizable=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -25,6 +31,6 @@ window/stretch/aspect="expand"
 
 [rendering]
 
-rendering_device/driver.windows="d3d12"
+rendering_device/driver.windows="opengl3"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

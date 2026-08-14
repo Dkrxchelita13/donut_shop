@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b7telldgef7yd"]
+
+[node name="DonutRoot" type="Node3D" unique_id=430661962]
+
+[node name="DoughMesh" type="MeshInstance3D" parent="." unique_id=1585861180]
+
+[node name="GlazeMesh" type="MeshInstance3D" parent="." unique_id=1475878995]
+
+[node name="ToppingContainer" type="Node3D" parent="GlazeMesh" unique_id=2114704817]
+
+[node name="InteractionArea" type="Area3D" parent="GlazeMesh/ToppingContainer" unique_id=331833572]

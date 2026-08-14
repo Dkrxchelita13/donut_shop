@@ -1,0 +1,39 @@
+# Godot generated data
+.godot/
+.import/
+
+# Exported builds
+builds/
+export/
+
+# Temporary files and logs
+*.tmp
+*.temp
+*.log
+*.bak
+*.swp
+*~
+
+# Credentials and local environment
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+credentials.json
+secrets.json
+
+# IDE and operating-system artifacts
+.vscode/
+.idea/
+.vs/
+*.sln
+*.csproj.user
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Platform export intermediates
+/android/
