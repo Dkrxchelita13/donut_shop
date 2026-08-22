@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="OrderData" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://core/resources/order_data.gd" id="1_order_data"]
+[ext_resource type="Resource" path="res://data/glazes/strawberry.tres" id="2_strawberry"]
+[ext_resource type="Resource" path="res://data/toppings/rainbow_sprinkles.tres" id="3_sprinkles"]
+[ext_resource type="Resource" path="res://data/customers/customer_anna.tres" id="4_customer"]
+
+[resource]
+script = ExtResource("1_order_data")
+id = &"strawberry_sprinkles"
+required_glaze = ExtResource("2_strawberry")
+required_toppings = Array[Resource]([ExtResource("3_sprinkles")])
+time_limit = 15.0
+customer = ExtResource("4_customer")

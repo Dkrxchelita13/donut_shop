@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4cpwrq2gnuuh"]
+
+[ext_resource type="Script" uid="uid://uvj1eed8blak" path="res://scripts/gameplay/gameplay.gd" id="1_elxb5"]
+[ext_resource type="PackedScene" path="res://scenes/gameplay/donut/donut.tscn" id="2_2p25t"]
+[ext_resource type="PackedScene" uid="uid://d32lii5rumu7h" path="res://scenes/ui/screens/gameplay/gameplay_ui.tscn" id="3_m3hu3"]
+[ext_resource type="Script" path="res://scripts/gameplay/orders/order_manager.gd" id="4_order_manager"]
+[ext_resource type="Resource" path="res://data/orders/strawberry_sprinkles.tres" id="5_strawberry_sprinkles"]
+[ext_resource type="Resource" path="res://data/orders/chocolate_oreo.tres" id="6_chocolate_oreo"]
+
+[node name="Gameplay" type="Node" unique_id=411198425]
+script = ExtResource("1_elxb5")
+
+[node name="OrderManager" type="Node" parent="."]
+script = ExtResource("4_order_manager")
+order_queue = Array[Resource]([ExtResource("5_strawberry_sprinkles"), ExtResource("6_chocolate_oreo")])
+
+[node name="DonutHost" type="Node3D" parent="." unique_id=2042650425]
+
+[node name="Donut" parent="DonutHost" unique_id=824018450 instance=ExtResource("2_2p25t")]
+
+[node name="InterfaceLayer" type="CanvasLayer" parent="." unique_id=886543814]
+
+[node name="GameplayUI" parent="InterfaceLayer" unique_id=1215086465 instance=ExtResource("3_m3hu3")]

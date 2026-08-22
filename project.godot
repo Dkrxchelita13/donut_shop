@@ -13,7 +13,15 @@ config_version=5
 config/name="Donut Shop"
 run/main_scene="res://scenes/boot/boot.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+run/flush_stdout_on_print=true
 config/icon="res://icon.svg"
+
+[autoload]
+
+PlatformManager="*res://core/autoload/platform_manager.gd"
+SaveManager="*res://core/autoload/save_manager.gd"
+AudioManager="*res://core/autoload/audio_manager.gd"
+QAMonitor="*res://core/autoload/qa_monitor.gd"
 
 [display]
 
@@ -21,7 +29,6 @@ window/size/viewport_width=720
 window/size/viewport_height=720
 window/size/window_width_override=720
 window/size/window_height_override=1280
-window/size/resizable=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

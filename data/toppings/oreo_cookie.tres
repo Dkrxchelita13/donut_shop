@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ToppingData" load_steps=3 format=3]
+[ext_resource type="Script" path="res://core/resources/topping_data.gd" id="1_tdata"]
+[ext_resource type="Texture2D" path="res://assets/textures/ui/ingredients/topping_oreo.png" id="2_icon"]
+[resource]
+script = ExtResource("1_tdata")
+id = &"oreo_cookie"
+display_name = "Galleta Oreo"
+base_price = 20
+unlock_level = 2
+is_repeated = false
+icon = ExtResource("2_icon")

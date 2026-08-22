@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://d32lii5rumu7h"]
+
+[ext_resource type="Script" uid="uid://7hw1eu7gj8lj" path="res://scripts/ui/gameplay/gameplay_ui.gd" id="1_7o5jb"]
+[ext_resource type="Resource" path="res://data/glazes/strawberry.tres" id="2_andya"]
+[ext_resource type="Resource" path="res://data/glazes/chocolate.tres" id="3_fq2br"]
+[ext_resource type="Resource" path="res://data/toppings/rainbow_sprinkles.tres" id="4_yg34l"]
+[ext_resource type="Resource" path="res://data/toppings/oreo_cookie.tres" id="5_mfgpa"]
+[ext_resource type="PackedScene" path="res://scenes/ui/components/customer_panel/customer_panel.tscn" id="6_customer_panel"]
+
+[node name="GameplayUI" type="Control" unique_id=1215086465]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7o5jb")
+strawberry_glaze = ExtResource("2_andya")
+chocolate_glaze = ExtResource("3_fq2br")
+sprinkles_topping = ExtResource("4_yg34l")
+oreo_topping = ExtResource("5_mfgpa")
+
+[node name="PortraitLayout" type="VBoxContainer" parent="." unique_id=217474323]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PortraitPanelHost" type="MarginContainer" parent="PortraitLayout" unique_id=861715819]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ControlsPanel" type="PanelContainer" parent="PortraitLayout/PortraitPanelHost" unique_id=2102919430]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PortraitLayout/PortraitPanelHost/ControlsPanel" unique_id=2061584229]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="PortraitLayout/PortraitPanelHost/ControlsPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Monedas: 0"
+
+[node name="CustomerPanel" parent="PortraitLayout/PortraitPanelHost/ControlsPanel/VBoxContainer" instance=ExtResource("6_customer_panel")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="StrawberryButton" type="Button" parent="PortraitLayout/PortraitPanelHost/ControlsPanel/VBoxContainer" unique_id=393751822]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ChocolateButton" type="Button" parent="PortraitLayout/PortraitPanelHost/ControlsPanel/VBoxContainer" unique_id=1350731228]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SprinklesButton" type="Button" parent="PortraitLayout/PortraitPanelHost/ControlsPanel/VBoxContainer" unique_id=810303397]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="OreoButton" type="Button" parent="PortraitLayout/PortraitPanelHost/ControlsPanel/VBoxContainer" unique_id=403378245]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="DeliverButton" type="Button" parent="PortraitLayout/PortraitPanelHost/ControlsPanel/VBoxContainer" unique_id=1523216241]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="PortraitLayout/PortraitPanelHost/ControlsPanel/VBoxContainer" unique_id=250727399]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="LandscapeLayout" type="HBoxContainer" parent="." unique_id=749603099]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LandscapePanelHost" type="MarginContainer" parent="LandscapeLayout" unique_id=1594912537]
+unique_name_in_owner = true
+layout_mode = 2

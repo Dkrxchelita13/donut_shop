@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="GlazeData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://core/resources/glaze_data.gd" id="1_glaze_data"]
+[ext_resource type="Texture2D" path="res://assets/textures/ui/ingredients/glaze_chocolate.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_glaze_data")
+id = &"chocolate"
+display_name = "Chocolate"
+color = Color(0.419608, 0.207843, 0.152941, 1)
+base_price = 15
+unlock_level = 1
+roughness = 0.38
+icon = ExtResource("2_icon")

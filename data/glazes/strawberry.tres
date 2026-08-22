@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="GlazeData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://core/resources/glaze_data.gd" id="1_glaze_data"]
+[ext_resource type="Texture2D" path="res://assets/textures/ui/ingredients/glaze_strawberry.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_glaze_data")
+id = &"strawberry"
+display_name = "Fresa"
+color = Color(1, 0.52549, 0.658824, 1)
+base_price = 10
+unlock_level = 1
+roughness = 0.28
+icon = ExtResource("2_icon")

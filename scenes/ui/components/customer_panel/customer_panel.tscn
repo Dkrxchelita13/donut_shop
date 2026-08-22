@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/components/customer_panel.gd" id="1_customer_panel"]
+
+[node name="CustomerPanel" type="PanelContainer"]
+size_flags_horizontal = 3
+script = ExtResource("1_customer_panel")
+
+[node name="OuterMargin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="ContentRow" type="HBoxContainer" parent="OuterMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="PortraitContainer" type="AspectRatioContainer" parent="OuterMargin/ContentRow"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+ratio = 1.0
+
+[node name="Portrait" type="TextureRect" parent="OuterMargin/ContentRow/PortraitContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RightColumn" type="VBoxContainer" parent="OuterMargin/ContentRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SpeechBubble" type="PanelContainer" parent="OuterMargin/ContentRow/RightColumn"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BubbleMargin" type="MarginContainer" parent="OuterMargin/ContentRow/RightColumn/SpeechBubble"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 8
+
+[node name="BubbleVBox" type="VBoxContainer" parent="OuterMargin/ContentRow/RightColumn/SpeechBubble/BubbleMargin"]
+layout_mode = 2
+
+[node name="OrderTitle" type="Label" parent="OuterMargin/ContentRow/RightColumn/SpeechBubble/BubbleMargin/BubbleVBox"]
+layout_mode = 2
+text = "Quiero..."
+
+[node name="IngredientGrid" type="GridContainer" parent="OuterMargin/ContentRow/RightColumn/SpeechBubble/BubbleMargin/BubbleVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 4
+
+[node name="PatienceBar" type="ProgressBar" parent="OuterMargin/ContentRow/RightColumn"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.0
+max_value = 1.0
+value = 1.0
+show_percentage = false

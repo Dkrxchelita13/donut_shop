@@ -1,0 +1,87 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/main_menu/main_menu.gd" id="1_main_menu"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main_menu")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.964706, 0.913725, 0.886275, 1)
+mouse_filter = 2
+
+[node name="SafeMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Center" type="CenterContainer" parent="SafeMargin"]
+layout_mode = 2
+
+[node name="MenuPanel" type="PanelContainer" parent="SafeMargin/Center"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelMargin" type="MarginContainer" parent="SafeMargin/Center/MenuPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="MenuVBox" type="VBoxContainer" parent="SafeMargin/Center/MenuPanel/PanelMargin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="SafeMargin/Center/MenuPanel/PanelMargin/MenuVBox"]
+layout_mode = 2
+text = "DONUT SHOP"
+horizontal_alignment = 1
+
+[node name="ProgressPanel" type="PanelContainer" parent="SafeMargin/Center/MenuPanel/PanelMargin/MenuVBox"]
+layout_mode = 2
+
+[node name="ProgressMargin" type="MarginContainer" parent="SafeMargin/Center/MenuPanel/PanelMargin/MenuVBox/ProgressPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="ProgressVBox" type="VBoxContainer" parent="SafeMargin/Center/MenuPanel/PanelMargin/MenuVBox/ProgressPanel/ProgressMargin"]
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="SafeMargin/Center/MenuPanel/PanelMargin/MenuVBox/ProgressPanel/ProgressMargin/ProgressVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Monedas: 0"
+
+[node name="LevelLabel" type="Label" parent="SafeMargin/Center/MenuPanel/PanelMargin/MenuVBox/ProgressPanel/ProgressMargin/ProgressVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Nivel: 1"
+
+[node name="StartButton" type="Button" parent="SafeMargin/Center/MenuPanel/PanelMargin/MenuVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "INICIAR JORNADA"

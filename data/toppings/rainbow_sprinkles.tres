@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ToppingData" load_steps=3 format=3]
+[ext_resource type="Script" path="res://core/resources/topping_data.gd" id="1_tdata"]
+[ext_resource type="Texture2D" path="res://assets/textures/ui/ingredients/topping_sprinkles.png" id="2_icon"]
+[resource]
+script = ExtResource("1_tdata")
+id = &"rainbow_sprinkles"
+display_name = "Chispas de colores"
+base_price = 10
+unlock_level = 1
+is_repeated = true
+icon = ExtResource("2_icon")

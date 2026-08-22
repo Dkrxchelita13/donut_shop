@@ -1,11 +1,81 @@
-[gd_scene format=3 uid="uid://b7telldgef7yd"]
+[gd_scene load_steps=6 format=3]
 
-[node name="DonutRoot" type="Node3D" unique_id=430661962]
+[ext_resource type="Script" path="res://scripts/gameplay/donut/donut.gd" id="1_script"]
+[ext_resource type="Material" path="res://data/glazes/materials/glaze_base.tres" id="2_glaze"]
 
-[node name="DoughMesh" type="MeshInstance3D" parent="." unique_id=1585861180]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dough"]
+albedo_color = Color(0.76, 0.47, 0.25, 1)
+roughness = 0.7
 
-[node name="GlazeMesh" type="MeshInstance3D" parent="." unique_id=1475878995]
+[sub_resource type="TorusMesh" id="TorusMesh_dough"]
+material = SubResource("StandardMaterial3D_dough")
+inner_radius = 0.55
+outer_radius = 1.25
+rings = 32
+ring_segments = 16
 
-[node name="ToppingContainer" type="Node3D" parent="GlazeMesh" unique_id=2114704817]
+[sub_resource type="TorusMesh" id="TorusMesh_glaze"]
+material = ExtResource("2_glaze")
+inner_radius = 0.53
+outer_radius = 1.28
+rings = 32
+ring_segments = 16
 
-[node name="InteractionArea" type="Area3D" parent="GlazeMesh/ToppingContainer" unique_id=331833572]
+[sub_resource type="Environment" id="Environment_donut"]
+background_mode = 1
+background_color = Color(0.964706, 0.913725, 0.886275, 1)
+ambient_light_source = 3
+ambient_light_color = Color(1, 0.945098, 0.917647, 1)
+ambient_light_energy = 0.65
+reflected_light_source = 2
+ssr_enabled = false
+ssao_enabled = false
+ssil_enabled = false
+glow_enabled = false
+fog_enabled = false
+volumetric_fog_enabled = false
+
+[node name="DonutLab" type="Node3D"]
+script = ExtResource("1_script")
+
+[node name="DonutPivot" type="Node3D" parent="."]
+
+[node name="DonutModel" type="Node3D" parent="DonutPivot"]
+
+[node name="Dough" type="MeshInstance3D" parent="DonutPivot/DonutModel"]
+mesh = SubResource("TorusMesh_dough")
+
+[node name="Glaze" type="MeshInstance3D" parent="DonutPivot/DonutModel"]
+position = Vector3(0, 0.06, 0)
+mesh = SubResource("TorusMesh_glaze")
+
+[node name="ToppingSockets" type="Node3D" parent="DonutPivot/DonutModel"]
+
+[node name="ToppingContainer" type="Node3D" parent="DonutPivot"]
+
+[node name="RepeatedToppings" type="Node3D" parent="DonutPivot/ToppingContainer"]
+
+[node name="UniqueToppings" type="Node3D" parent="DonutPivot/ToppingContainer"]
+
+[node name="CameraRig" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig"]
+position = Vector3(0, 4.5, 6.5)
+rotation_degrees = Vector3(-35, 0, 0)
+projection = 1
+size = 4.8
+keep_aspect = 1
+current = true
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="KeyLight" type="DirectionalLight3D" parent="Lighting"]
+rotation_degrees = Vector3(-50, -35, 0)
+light_energy = 1.15
+shadow_enabled = true
+directional_shadow_mode = 0
+directional_shadow_max_distance = 10.0
+directional_shadow_blend_splits = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_donut")
